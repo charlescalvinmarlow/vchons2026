@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Redaction+10:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <p id="dates">26 Nov - 4 Dec 2026</p>
+        <div id="tags">
+            <span>Tags: </span>
+            <span class="publication tag">Publication</span>
+            <span class="digital tag">Digital</span>
+            <span class="video tag">Video</span>
+        </div>
+        <a href="" id="about-link">About this site →</a>
+        <div class="image-grid">
+            <div class="headshot" id="anja"></div>
+            <div class="headshot" id="arkie"></div>
+            <div class="headshot" id="chantelle"></div>
+            <div class="headshot" id="charles"></div>
+            <div class="headshot" id="charli"></div>
+            <div class="headshot" id="cheylon"></div>
+            <div class="headshot" id="daniel"></div>
+            <div class="headshot" id="elaine"></div>
+            <div class="headshot" id="ellie"></div>
+            <div class="headshot" id="jade"></div>
+            <div class="headshot" id="james"></div>
+            <div class="headshot" id="jenn"></div>
+            <div class="headshot" id="jessie"></div>
+            <div class="headshot" id="jie"></div>
+            <div class="headshot" id="joe"></div>
+            <div class="headshot" id="joel"></div>
+            <div class="headshot" id="jom"></div>
+            <div class="headshot" id="katie"></div>
+            <div class="headshot" id="kaya"></div>
+            <div class="headshot" id="kk"></div>
+            <div class="headshot" id="lucien"></div>
+            <div class="headshot" id="mac"></div>
+            <div class="headshot" id="pat"></div>
+            <div class="headshot" id="shu"></div>
+            <div class="headshot" id="sophie"></div>
+            <div class="headshot" id="tom"></div>
+
+            <div class="title-text" id="uts">
+                <p id="utsP">UTS</p>
+            </div>
+            <div class="title-text" id="visual">
+                <p id="visualP">VISUAL</p>
+            </div>
+            <div class="title-text" id="communication">
+                <p id="communicationP">COMMUNICATION</p>
+            </div>
+            <div class="title-text" id="honours">
+                <p id="honoursP">HONOURS</p>
+            </div>
+            <div class="title-text" id="showcase">
+                <p id="showcaseP">SHOWCASE</p>
+            </div>
+            <div class="title-text" id="year">
+                <p id="yearP">2026</p>
+            </div>
+            <div class="title-text" id="extra-text">
+                <p id="extra-textP"></p>
+            </div>
+
+            <div class="project-image"></div>
+        </div>
+    </main>
+</body>
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    a, a:hover, a:visited {
+        color: inherit;
+    }
+
+    :root {
+        --color: rgb(113, 70, 27);
+        --bg: rgb(247, 246, 233);
+        /* --title-size: 8.5vh; */
+        --title-size: clamp(2em, 10vw, 8.5vh);
+        color: var(--color);
+    }
+    
+    body {
+        color: var(--color);
+        transition: color 0.5s, background-color 0.5s;
+        background-color: var(--bg);
+    }
+
+    main {
+        height: 100dvh;
+        width: 100dvw;
+        font-family: 'Redaction 10';
+        
+    }
+
+    .image-grid {
+        width: 100%;
+        height: 100%;
+        padding: 40px 75px;
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(12, 8.3%);
+
+    }
+
+    #dates {
+        padding: 40px;
+        position: absolute;
+    }
+
+    #about-link {
+        padding: 40px;
+        position: fixed;
+        right: 0;
+    }
+
+    #tags {
+        padding: 40px;
+        position: fixed;
+        bottom: 0;
+        .tag {
+            margin-right: 3px;
+            text-decoration: underline;
+        }
+    }
+
+    .title-text {
+        p{font-size: var(--title-size);text-box-trim: trim-both;}
+        &::after {
+            font-size: 8.5vh;text-box-trim: trim-both;
+        }
+    }
+
+    #uts {
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+    }
+    #visual {
+        grid-column: 3 / 6;
+        grid-row: 5 / 6;
+    }
+    #communication {
+        grid-column: 1 / 7;
+        grid-row: 6 / 7;
+    }
+    #honours {
+        grid-column: 3 / 7;
+        grid-row: 7 / 8;
+    }
+    #showcase {
+        grid-column: 2 / 6;
+        grid-row: 8 / 9;
+    }
+    #year {
+        grid-column: 3 / 9;
+        grid-row: 9 / 10;
+    }
+    #extra-text {
+        grid-column: 4 / 11;
+        grid-row: 10 / 11;
+    }
+
+
+    .headshot {
+        mask-repeat: no-repeat;
+        mask-size: auto 100%;
+        mask-position: center;
+        background-color: var(--color);
+        transition: background-color 0.5s, opacity 0.5s;
+        outline: var(--color) 1px solid;
+        opacity: 0;
+    }
+
+    .project-image {
+        opacity: 0;
+        transition: opacity 1s;
+        z-index: 5;
+        margin: 10px;
+    }
+
+    #anja {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Anja00.webp);
+        animation: popin 0.5s forwards;
+    }
+
+    #arkie {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Arkie00.webp);
+        animation: popin 0.5s forwards 0.2s;
+    }
+
+    #chantelle {
+        grid-column: 6 / 7;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Chantelle00.webp);
+        animation: popin 0.5s forwards 0.4s;
+    }
+
+    #charles {
+        grid-column: 7 / 8;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Charlie00.webp);
+        animation: popin 0.5s forwards 0.6s;
+    }
+
+    #charli {
+        grid-column: 8 / 9;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Charli00.webp);
+        animation: popin 0.5s forwards 0.8s;
+    }
+
+    #cheylon {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Cheylon00.webp);
+        animation: popin 0.5s forwards 1s;
+    }
+
+    #daniel {
+        grid-column: 4 / 5;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Dan00.webp);
+        animation: popin 0.5s forwards 1.2s;
+    }
+
+    #elaine {
+        grid-column: 6 / 7;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Elaine00.webp);
+        animation: popin 0.5s forwards 1.4s;
+    }
+
+    #ellie {
+        grid-column: 8 / 9;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Ellie00.webp);
+        animation: popin 0.5s forwards 1.6s;
+    }
+
+    #jade {
+        grid-column: 9 / 10;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Jade00.webp);
+        animation: popin 0.5s forwards 1.8s;
+    }
+
+    #james {
+        grid-column: 7 / 8;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/James00.webp);
+        animation: popin 0.5s forwards 2s;
+    }
+
+    #jenn {
+        grid-column: 8 / 9;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/Jenn00.webp);
+        animation: popin 0.5s forwards 2.2s;
+    }
+
+
+    #jessie {
+        grid-column: 9 / 10;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/Jessie00.webp);
+        animation: popin 0.5s forwards 2.4s;
+    }
+
+
+    #jie {
+        grid-column: 1 / 2;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Jie00.webp);
+        animation: popin 0.5s forwards 2.6s;
+    }
+
+
+    #joe {
+        grid-column: 7 / 8;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Joe00.webp);
+        animation: popin 0.5s forwards 2.8s;
+    }
+
+
+    #joel {
+        grid-column: 9 / 10;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Joel00.webp);
+        animation: popin 0.5s forwards 3s;
+    }
+
+
+    #jom {
+        grid-column: 1 / 2;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Jom00.webp);
+        animation: popin 0.5s forwards 3.2s;
+    }
+
+    #katie {
+        grid-column: 5 / 6;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Katie00.webp);
+        animation: popin 0.5s forwards 3.4s;
+    }
+
+    #kaya {
+        grid-column: 7 / 8;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Kaya00.webp);
+        animation: popin 0.5s forwards 3.6s;
+    }
+
+    #kk {
+        grid-column: 9 / 11;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Kk00.webp);
+        animation: popin 0.5s forwards 3.8s;
+    }
+
+    #lucien {
+        grid-column: 3 / 4;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Lucien00.webp);
+        animation: popin 0.5s forwards 4s;
+    }
+
+    #mac {
+        grid-column: 5 / 6;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Mack00.webp);
+        animation: popin 0.5s forwards 4.2s;
+    }
+
+    #pat {
+        grid-column: 6 / 7;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Pat00.webp);
+        animation: popin 0.5s forwards 4.4s;
+    }
+
+    #shu {
+        grid-column: 7 / 8;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Shu00.webp);
+        animation: popin 0.5s forwards 4.6s;
+    }
+
+    #sophie {
+        grid-column: 8 / 9;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Sophie00.webp);
+        animation: popin 0.5s forwards 4.8s;
+    }
+
+    #tom {
+        grid-column: 9 / 10;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Tom00.webp);
+        animation: popin 0.5s forwards 5s;
+    }
+
+    @media (hover:hover) {
+
+        body:has(#anja:hover) {
+            --color: rgb(42, 38, 112);
+            --bg: rgb(204, 247, 240);
+            .headshot:not(#anja) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 3 / 6;
+                grid-row: 1 / 5;
+                background: center / cover url(images/anja/hero.webp);
+                opacity: 1;
+            }
+        }
+
+        body:has(#chantelle:hover) {
+            --color: rgb(56, 110, 23);
+            --bg: rgb(234, 219, 181);
+            .headshot:not(#chantelle) {
+                mix-blend-mode: overlay;
+            }
+        }
+
+        body:has(#charli:hover) {
+            --color: rgb(59, 0, 136);
+            --bg: rgb(27, 242, 185);
+            .headshot:not(#charli) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 8 / 11;
+                grid-row: 1 / 7;
+                /* background: center / cover url(images/charles/hero.webp); */
+                opacity: 1;
+            }
+        }
+
+        body:has(#charles:hover) {
+            --color: rgb(59, 0, 136);
+            --bg: rgb(27, 242, 185);
+            .headshot:not(#charles) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 8 / 11;
+                grid-row: 1 / 7;
+                background: center / cover url(images/charles/hero.webp);
+                opacity: 1;
+            }
+        }
+
+        body:has(#cheylon:hover) {
+            --color: rgb(185, 0, 136);
+            --bg: rgb(252, 203, 255);
+            .headshot:not(#cheylon) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 2 / 5;
+                grid-row: 1 / 5;
+                background: center / cover url(images/cheylon/hero.webp);
+                opacity: 1;
+            }
+        }
+
+
+        body:has(#jessie:hover) {
+            --color: rgb(0, 0, 255);
+            --bg: rgb(255, 255, 255);
+            .headshot:not(#jessie) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 2 / 5;
+                grid-row: 1 / 5;
+                /* background: center / cover url(images/cheylon/hero.webp); */
+                opacity: 1;
+            }
+        }
+
+        body:has(#sophie:hover) {
+            --color: rgb(30, 72, 81);
+            --bg:   rgb(153, 233, 217);
+            .headshot:not(#sophie) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 5 / 8;
+                grid-row: 9 / 13;
+                background: center / cover url(images/sophie/hero.webp);
+                opacity: 1;
+            }
+        }
+
+        body:has(#tom:hover) {
+            --color: rgb(3, 47, 85);
+            --bg:   rgb(231, 255, 203);
+            .headshot:not(#tom) {
+                mix-blend-mode: overlay;
+            }
+            .project-image {
+                grid-column: 6 / 9;
+                grid-row: 9 / 13;
+                background: center / cover url(images/tom/hero.webp);
+                opacity: 1;
+            }
+        }
+    }
+
+    /* temporary mobile hotfix */
+    @media (width < 900px) {
+        .headshot {
+            mask-size: contain;
+        }
+        .image-grid {
+            padding: 0;
+            margin: 0;
+        }
+
+    }
+
+
+    @keyframes popin {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+</html>
