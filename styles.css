@@ -182,6 +182,48 @@
         --current-color: var(--elaine-fg);
     }
 
+    #pageid-ellie {
+        color: var(--ellie-fg);
+        background-color: var(--ellie-bg);
+        --current-color: var(--ellie-fg);
+    }
+
+    #pageid-jade {
+        color: var(--jade-fg);
+        background-color: var(--jade-bg);
+        --current-color: var(--jade-fg);
+    }
+
+    #pageid-james {
+        color: var(--james-fg);
+        background-color: var(--james-bg);
+        --current-color: var(--james-fg);
+    }
+
+    #pageid-jenn {
+        color: var(--jenn-fg);
+        background-color: var(--jenn-bg);
+        --current-color: var(--jenn-fg);
+    }
+
+    #pageid-jessie {
+        color: var(--jessie-fg);
+        background-color: var(--jessie-bg);
+        --current-color: var(--jessie-fg);
+    }
+
+    #pageid-joseph {
+        color: var(--joe-fg);
+        background-color: var(--joe-bg);
+        --current-color: var(--joe-fg);
+    }
+
+    #pageid-jie {
+        color: var(--jie-fg);
+        background-color: var(--jie-bg);
+        --current-color: var(--jie-fg);
+    }
+
     .image-grid {
         width: 100%;
         height: 100%;
