@@ -6,10 +6,13 @@ const showcase = document.getElementById('showcaseP');
 const year = document.getElementById('yearP');
 const extra = document.getElementById('extra-textP')
 
-const chantelle = document.getElementById('chantelle');
-const cheylon = document.getElementById('cheylon');
 const anja = document.getElementById('anja');
+const arkie = document.getElementById('arkie');
+const chantelle = document.getElementById('chantelle');
 const charles = document.getElementById('charles');
+const charli = document.getElementById('charli');
+const cheylon = document.getElementById('cheylon');
+const daniel = document.getElementById('daniel');
 const sophie = document.getElementById('sophie');
 const tom = document.getElementById('tom');
 
@@ -30,6 +33,13 @@ anja.addEventListener("mouseout", (event) => {
     resetText();
 })
 
+arkie.addEventListener("mouseover", (event) => {
+    addText('', 'ARKIE', 'THOMAS', '', 'WEIRD', 'GIRLS', '')
+})
+arkie.addEventListener("mouseout", (event) => {
+    resetText();
+})
+
 chantelle.addEventListener("mouseover", (event) => {
     addText('CHANTELLE', 'CORTEZ', 'MAGLALANG', '', 'TANIM', 'TRACING ROOTS TO A', 'PLANTLY ATTENTION')
 })
@@ -44,6 +54,13 @@ charles.addEventListener("mouseout", (event) => {
     resetText();
 })
 
+charli.addEventListener("mouseover", (event) => {
+    addText('CHARLI', 'KRITE', '', 'OBJECTS', 'OF INTEREST', '', '')
+})
+charli.addEventListener("mouseout", (event) => {
+    resetText();
+})
+
 cheylon.addEventListener("mouseover", (event) => {
     addText('', 'CHEYLON', 'DEVINE', '', 'VESTIGES', 'OF THE SEA', '')
 })
@@ -51,7 +68,12 @@ cheylon.addEventListener("mouseout", (event) => {
     resetText();
 })
 
-
+daniel.addEventListener("mouseover", (event) => {
+    addText('', 'DANIEL', 'SJÖGREN', '', 'EVERYTHING', 'GOES', '')
+})
+daniel.addEventListener("mouseout", (event) => {
+    resetText();
+})
 
 sophie.addEventListener("mouseover", (event) => {
     addText('SOPHIE', 'ZHANG', '', 'AN INDEX', 'OF MEMORY', '', '')
