@@ -72,6 +72,7 @@
         font-family: 'Redaction 10';
     }
 
+    /* INDIVIDUAL PAGE STYLING: SOPHIE ZHANG */
     #pageid-sophie {
         color: var(--sophie-fg);
         background-color: var(--sophie-bg);
@@ -104,12 +105,16 @@
         padding: 40px;
         position: fixed;
         left: 0;
+        color: rgb(247, 246, 233);
+        mix-blend-mode: difference;
     }
 
     #tags {
         padding: 40px;
         position: fixed;
         bottom: 0;
+        color: rgb(247, 246, 233);
+        mix-blend-mode: difference;
 
         .tag {
             margin-right: 3px;
@@ -145,23 +150,19 @@
         grid-template-rows: auto 1fr auto;
 
         pointer-events: none;
-        /* clicks pass through to the page underneath */
 
-        /* Text inherits the person's fg colour from main. Darken keeps the
-           darker of text vs. backdrop per RGB channel, so on the plain bg it
-           shows the exact fg (fg must be darker than bg in every channel),
-           and over images it blends. Fades over very dark images. */
-        mix-blend-mode: darken;
+        color: rgb(247, 246, 233);
+        mix-blend-mode: difference;
     }
 
     /* SPECIFIC TEXT STYLING FOR AUTHOR NAME & PROJECT TITLE SITTING INSIDE PROFILE-FIXED */
     #project-author {
-        grid-column: 3 / 6;
+        grid-column: 3/6;
         grid-row: 1;
     }
 
     #project-title {
-        grid-column: 3 / 6;
+        grid-column: 3/6;
         grid-row: 3;
     }
 
@@ -181,9 +182,12 @@
         }
     }
 
+    /* LEFT PANEL STYLING, USING A SUB 6-COLUMN GRID */
     #left-panel {
-        grid-column: 1 / 7;
+        grid-column: 1/7;
         padding-top: 15vh;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
     }
 
     #left-panel img {
@@ -191,24 +195,37 @@
         height: auto;
     }
 
+    .img-6col {
+        grid-column: 1/7;
+    }
+
+    .img-5col {
+        grid-column: 2/7;
+    }
+
+    .img-4col {
+        grid-column: 2/6;
+    }
+
+    /* RIGHT PANEL STYLING, USING A SUB 6-COLUMN GRID */
     #right-panel {
-        grid-column: 7 / 10;
+        grid-column: 7/10;
         padding: 4.5vh 40px 0 40px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: auto 1fr auto;
+        /* grid-template-rows: auto 1fr auto; */
     }
 
     /* SUB GRID OF RIGHT PANEL */
     #profile-bio {
-        grid-column: 1 / 7;
-        grid-row: 1 / 2;
-        padding-bottom: 20px;
+        grid-column: 1/7;
+        grid-row: 1/2;
+        padding-bottom: 5vh;
     }
 
     #profile-image {
-        grid-column: 1 / 3;
-        grid-row: 2 / 3;
+        grid-column: 1/3;
+        grid-row: 2/3;
     }
 
     #profile-image img {
@@ -218,15 +235,20 @@
     }
 
     #profile-contact {
-        grid-column: 3 / 7;
-        grid-row: 2 / 3;
+        grid-column: 3/7;
+        grid-row: 2/3;
+    }
+
+    #project-synopsis-heading {
+        grid-column: 1/7;
+        grid-row: 3/4;
+        padding: 20vh 0 8vh 0;
     }
 
     #project-synopsis {
         grid-column: 1 / 7;
-        grid-row: 3 / 4;
-        align-content: top;
-        /* top: 0; */
+        grid-row: 4/5;
+        padding-bottom: 30vh;
     }
 
     .title-text {
@@ -277,6 +299,7 @@
         grid-row: 10 / 11;
     }
 
+    /* HOME PAGE HEADSHOT STYLING */
     .headshot {
         mask-repeat: no-repeat;
         mask-size: auto 100%;
@@ -573,7 +596,7 @@
             }
         }
 
-        /* Hovering the hero as well keeps it open, so it can be clicked */
+        /* HOVERING THE HERO KEEPS IT OPEN SO IT CAN BE CLICKED */
         body:has(#sophie:hover, #sophie-hero:hover) {
             --color: var(--sophie-fg);
             --bg: var(--sophie-bg);
@@ -606,7 +629,7 @@
         }
     }
 
-    /* temporary mobile hotfix */
+    /* MOBILE DIMENSIONS SIZE */
     @media (width < 900px) {
         .headshot {
             mask-size: contain;
@@ -617,12 +640,12 @@
             margin: 0;
         }
 
-        /* Match .image-grid's side padding so the columns still line up */
+        /* PADDING MATCHES .IMAGE-GRID SIDE PADDING SO COLUMNS LINE UP */
         .profile-fixed {
             padding: 3.5vh 0 0;
         }
 
-        /* Profile pages: stack the panels and scroll the whole page instead */
+        /* STACKS THE PANELS ON MOBILE VIEW, SCROLLING THE WHOLE PAGE (NO SPLIT SCROLL) */
         main.profile {
             height: auto;
             overflow: visible;
@@ -637,7 +660,6 @@
         }
 
     }
-
 
     @keyframes popin {
         to {
