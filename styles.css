@@ -1,0 +1,646 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    a,
+    a:hover,
+    a:visited {
+        color: inherit;
+    }
+
+    /* USED FOR PROJECT TITLE & PROFILE NAME */
+    h1 {
+        font-size: 2em;
+        font-family: 'Redaction 10';
+        font-weight: 400;
+    }
+
+    /* USED AS PROFILE PAGE HEADINGS */
+    h2 {
+        font-size: 1.5em;
+        font-family: 'Redaction 10';
+        font-weight: 400;
+    }
+
+    /* USED FOR PROFILE BIO TEXT */
+    h3 {
+        font-size: 1.2em;
+        font-family: 'Redaction 10';
+        font-weight: 400;
+    }
+
+    :root {
+        --color: rgb(113, 70, 27);
+        --bg: rgb(247, 246, 233);
+        /* INDIVIDUAL PERSON COLOURS */
+        --anja-bg: rgb(204, 247, 240);
+        --anja-fg: rgb(42, 38, 112);
+        --chantelle-bg: rgb(234, 219, 181);
+        --chantelle-fg: rgb(56, 110, 23);
+        --charli-bg: rgb(27, 242, 185);
+        --charli-fg: rgb(59, 0, 136);
+        --charles-bg: rgb(27, 242, 185);
+        --charles-fg: rgb(59, 0, 136);
+        --cheylon-bg: rgb(252, 203, 255);
+        --cheylon-fg: rgb(185, 0, 136);
+        --james-bg: #E6DACF;
+        --james-fg: #2C4466;
+        --jessie-bg: rgb(255, 255, 255);
+        --jessie-fg: rgb(0, 0, 255);
+        --joel-bg: rgb(203, 205, 207);
+        --joel-fg: #ff45b8;
+        --sophie-bg: rgb(245, 253, 255);
+        --sophie-fg: rgb(10, 55, 65);
+        --tom-bg: rgb(231, 255, 203);
+        --tom-fg: rgb(3, 47, 85);
+        /* --title-size: 8.5vh; */
+        --title-size: clamp(2em, 10vw, 8.5vh);
+        color: var(--color);
+    }
+
+    body {
+        color: var(--color);
+        transition: color 0.5s, background-color 0.5s;
+        background-color: var(--bg);
+    }
+
+    main {
+        height: 100dvh;
+        width: 100dvw;
+        font-family: 'Redaction 10';
+    }
+
+    #pageid-sophie {
+        color: var(--sophie-fg);
+        background-color: var(--sophie-bg);
+    }
+
+    .image-grid {
+        width: 100%;
+        height: 100%;
+        padding: 40px 75px;
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(12, 8.3%);
+    }
+
+
+    /* FIXED PAGE ELEMENT STYLING */
+    #dates {
+        padding: 40px;
+        position: absolute;
+    }
+
+    #about-link {
+        padding: 40px;
+        position: fixed;
+        right: 0;
+    }
+
+    #return-link {
+        padding: 40px;
+        position: fixed;
+        left: 0;
+    }
+
+    #tags {
+        padding: 40px;
+        position: fixed;
+        bottom: 0;
+
+        .tag {
+            margin-right: 3px;
+            text-decoration: underline;
+        }
+    }
+
+    /* INDIVIDUAL PAGE FIXED ELEMENTS */
+    main.profile {
+        height: 100dvh;
+        width: 100%;
+        overflow: hidden;
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    main.profile .image-grid {
+        height: auto;
+        grid-template-rows: none;
+        row-gap: 40px;
+    }
+
+    /* FIXED PROFILE FURNITURE STYLING */
+    .profile-fixed {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        padding: 3.5vh 0;
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: auto 1fr auto;
+
+        pointer-events: none;
+        /* clicks pass through to the page underneath */
+
+        /* Text inherits the person's fg colour from main. Darken keeps the
+           darker of text vs. backdrop per RGB channel, so on the plain bg it
+           shows the exact fg (fg must be darker than bg in every channel),
+           and over images it blends. Fades over very dark images. */
+        mix-blend-mode: darken;
+    }
+
+    /* SPECIFIC TEXT STYLING FOR AUTHOR NAME & PROJECT TITLE SITTING INSIDE PROFILE-FIXED */
+    #project-author {
+        grid-column: 3 / 6;
+        grid-row: 1;
+    }
+
+    #project-title {
+        grid-column: 3 / 6;
+        grid-row: 3;
+    }
+
+    #left-panel,
+    #right-panel {
+        grid-row: 1;
+        height: 100dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        /* reaching the end of one panel doesn't scroll anything else */
+
+        /* HIDE SCROLLBAR */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    #left-panel {
+        grid-column: 1 / 7;
+        padding-top: 15vh;
+    }
+
+    #left-panel img {
+        width: 100%;
+        height: auto;
+    }
+
+    #right-panel {
+        grid-column: 7 / 10;
+        padding: 4.5vh 40px 0 40px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto 1fr auto;
+    }
+
+    /* SUB GRID OF RIGHT PANEL */
+    #profile-bio {
+        grid-column: 1 / 7;
+        grid-row: 1 / 2;
+        padding-bottom: 20px;
+    }
+
+    #profile-image {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    #profile-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #profile-contact {
+        grid-column: 3 / 7;
+        grid-row: 2 / 3;
+    }
+
+    #project-synopsis {
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+        align-content: top;
+        /* top: 0; */
+    }
+
+    .title-text {
+        p {
+            font-size: var(--title-size);
+            text-box-trim: trim-both;
+        }
+
+        &::after {
+            font-size: 8.5vh;
+            text-box-trim: trim-both;
+        }
+    }
+
+    /* HOME PAGE TEXT GRID STYLING */
+    #uts {
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+    }
+
+    #visual {
+        grid-column: 3 / 6;
+        grid-row: 5 / 6;
+    }
+
+    #communication {
+        grid-column: 1 / 7;
+        grid-row: 6 / 7;
+    }
+
+    #honours {
+        grid-column: 3 / 7;
+        grid-row: 7 / 8;
+    }
+
+    #showcase {
+        grid-column: 2 / 6;
+        grid-row: 8 / 9;
+    }
+
+    #year {
+        grid-column: 3 / 9;
+        grid-row: 9 / 10;
+    }
+
+    #extra-text {
+        grid-column: 4 / 11;
+        grid-row: 10 / 11;
+    }
+
+    .headshot {
+        mask-repeat: no-repeat;
+        mask-size: auto 100%;
+        mask-position: center;
+        background-color: var(--color);
+        transition: background-color 0.5s, opacity 0.5s;
+        outline: var(--color) 1px solid;
+        opacity: 0;
+    }
+
+    .project-image {
+        opacity: 0;
+        transition: opacity 1s;
+        z-index: 5;
+        margin: 10px;
+    }
+
+    #anja {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Anja00.webp);
+        animation: popin 0.5s forwards;
+    }
+
+    #arkie {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Arkie00.webp);
+        animation: popin 0.5s forwards 0.2s;
+    }
+
+    #chantelle {
+        grid-column: 6 / 7;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Chantelle00.webp);
+        animation: popin 0.5s forwards 0.4s;
+    }
+
+    #charles {
+        grid-column: 7 / 8;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Charlie00.webp);
+        animation: popin 0.5s forwards 0.6s;
+    }
+
+    #charli {
+        grid-column: 8 / 9;
+        grid-row: 1 / 3;
+        mask-image: url(images/headshots/Charli00.webp);
+        animation: popin 0.5s forwards 0.8s;
+    }
+
+    #cheylon {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Cheylon00.webp);
+        animation: popin 0.5s forwards 1s;
+    }
+
+    #daniel {
+        grid-column: 4 / 5;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Dan00.webp);
+        animation: popin 0.5s forwards 1.2s;
+    }
+
+    #elaine {
+        grid-column: 6 / 7;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Elaine00.webp);
+        animation: popin 0.5s forwards 1.4s;
+    }
+
+    #ellie {
+        grid-column: 8 / 9;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Ellie00.webp);
+        animation: popin 0.5s forwards 1.6s;
+    }
+
+    #jade {
+        grid-column: 9 / 10;
+        grid-row: 3 / 5;
+        mask-image: url(images/headshots/Jade00.webp);
+        animation: popin 0.5s forwards 1.8s;
+    }
+
+    #james {
+        grid-column: 7 / 8;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/James00.webp);
+        animation: popin 0.5s forwards 2s;
+    }
+
+    #jenn {
+        grid-column: 8 / 9;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/Jenn00.webp);
+        animation: popin 0.5s forwards 2.2s;
+    }
+
+
+    #jessie {
+        grid-column: 9 / 10;
+        grid-row: 5 / 7;
+        mask-image: url(images/headshots/Jessie00.webp);
+        animation: popin 0.5s forwards 2.4s;
+    }
+
+
+    #jie {
+        grid-column: 1 / 2;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Jie00.webp);
+        animation: popin 0.5s forwards 2.6s;
+    }
+
+
+    #joe {
+        grid-column: 7 / 8;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Joe00.webp);
+        animation: popin 0.5s forwards 2.8s;
+    }
+
+
+    #joel {
+        grid-column: 9 / 10;
+        grid-row: 7 / 9;
+        mask-image: url(images/headshots/Joel00.webp);
+        animation: popin 0.5s forwards 3s;
+    }
+
+
+    #jom {
+        grid-column: 1 / 2;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Jom00.webp);
+        animation: popin 0.5s forwards 3.2s;
+    }
+
+    #katie {
+        grid-column: 5 / 6;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Katie00.webp);
+        animation: popin 0.5s forwards 3.4s;
+    }
+
+    #kaya {
+        grid-column: 7 / 8;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/Kaya00.webp);
+        animation: popin 0.5s forwards 3.6s;
+    }
+
+    #kk {
+        grid-column: 9 / 11;
+        grid-row: 9 / 11;
+        mask-image: url(images/headshots/KK00.webp);
+        animation: popin 0.5s forwards 3.8s;
+    }
+
+    #lucien {
+        grid-column: 3 / 4;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Lucien00.webp);
+        animation: popin 0.5s forwards 4s;
+    }
+
+    #mac {
+        grid-column: 5 / 6;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Mack00.webp);
+        animation: popin 0.5s forwards 4.2s;
+    }
+
+    #pat {
+        grid-column: 6 / 7;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Pat00.webp);
+        animation: popin 0.5s forwards 4.4s;
+    }
+
+    #shu {
+        grid-column: 7 / 8;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Shu00.webp);
+        animation: popin 0.5s forwards 4.6s;
+    }
+
+    #sophie {
+        grid-column: 8 / 9;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Sophie00.webp);
+        animation: popin 0.5s forwards 4.8s;
+    }
+
+    #tom {
+        grid-column: 9 / 10;
+        grid-row: 11 / 13;
+        mask-image: url(images/headshots/Tom00.webp);
+        animation: popin 0.5s forwards 5s;
+    }
+
+    @media (hover:hover) {
+
+        body:has(#anja:hover) {
+            --color: var(--anja-fg);
+            --bg: var(--anja-bg);
+
+            .headshot:not(#anja) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 3 / 6;
+                grid-row: 1 / 5;
+                background: center / cover url(images/anja/hero.webp);
+                opacity: 1;
+            }
+        }
+
+        body:has(#chantelle:hover) {
+            --color: var(--chantelle-fg);
+            --bg: var(--chantelle-bg);
+
+            .headshot:not(#chantelle) {
+                mix-blend-mode: overlay;
+            }
+        }
+
+        body:has(#charli:hover) {
+            --color: var(--charli-fg);
+            --bg: var(--charli-bg);
+
+            .headshot:not(#charli) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 8 / 11;
+                grid-row: 1 / 7;
+                /* background: center / cover url(images/charles/hero.webp); */
+                opacity: 1;
+            }
+        }
+
+        body:has(#charles:hover) {
+            --color: var(--charles-fg);
+            --bg: var(--charles-bg);
+
+            .headshot:not(#charles) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 8 / 11;
+                grid-row: 1 / 7;
+                background: center / cover url(images/charles/hero.webp);
+                opacity: 1;
+            }
+        }
+
+        body:has(#cheylon:hover) {
+            --color: var(--cheylon-fg);
+            --bg: var(--cheylon-bg);
+
+            .headshot:not(#cheylon) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 2 / 5;
+                grid-row: 1 / 5;
+                background: center / cover url(images/cheylon/hero.webp);
+                opacity: 1;
+            }
+        }
+
+
+        body:has(#jessie:hover) {
+            --color: var(--jessie-fg);
+            --bg: var(--jessie-bg);
+
+            .headshot:not(#jessie) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 2 / 5;
+                grid-row: 1 / 5;
+                /* background: center / cover url(images/cheylon/hero.webp); */
+                opacity: 1;
+            }
+        }
+
+        /* Hovering the hero as well keeps it open, so it can be clicked */
+        body:has(#sophie:hover, #sophie-hero:hover) {
+            --color: var(--sophie-fg);
+            --bg: var(--sophie-bg);
+
+            .headshot:not(#sophie) {
+                mix-blend-mode: overlay;
+            }
+
+            #sophie-hero {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 1s, visibility 0s;
+            }
+        }
+
+        body:has(#tom:hover) {
+            --color: var(--tom-fg);
+            --bg: var(--tom-bg);
+
+            .headshot:not(#tom) {
+                mix-blend-mode: overlay;
+            }
+
+            .project-image {
+                grid-column: 6 / 9;
+                grid-row: 9 / 13;
+                background: center / cover url(images/tom/hero.webp);
+                opacity: 1;
+            }
+        }
+    }
+
+    /* temporary mobile hotfix */
+    @media (width < 900px) {
+        .headshot {
+            mask-size: contain;
+        }
+
+        .image-grid {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Match .image-grid's side padding so the columns still line up */
+        .profile-fixed {
+            padding: 3.5vh 0 0;
+        }
+
+        /* Profile pages: stack the panels and scroll the whole page instead */
+        main.profile {
+            height: auto;
+            overflow: visible;
+        }
+
+        #left-panel,
+        #right-panel {
+            grid-column: 1 / -1;
+            grid-row: auto;
+            height: auto;
+            overflow: visible;
+        }
+
+    }
+
+
+    @keyframes popin {
+        to {
+            opacity: 1;
+        }
+    }
