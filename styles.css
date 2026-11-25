@@ -133,6 +133,11 @@
         background-color: var(--sophie-bg);
     }
 
+    #pageid-anja {
+        color: var(--anja-fg);
+        background-color: var(--anja-bg);
+    }
+
     .image-grid {
         width: 100%;
         height: 100%;
@@ -170,7 +175,7 @@
     #tags {
         padding: 40px;
         position: fixed;
-        width: clamp(100px, 20vw, 300px);
+        width: clamp(100px, 30vw, 600px);
         bottom: 0;
         color: rgb(247, 246, 233);
         mix-blend-mode: difference;
@@ -315,8 +320,16 @@
         mask-size: auto 100%;
         mask-position: center;
 
-        /* this will need new tags or classes or inline or something */
-        mask-image: url(images/headshots/sophie00.webp);
+        --anja-headshot: url(images/headshots/Anja00.webp);
+        --sophie-headshot: url(images/headshots/Sophie00.webp);
+    }
+
+    #profile-image-anja {
+        mask-image: var(--anja-headshot);
+    }
+
+    #profile-image-sophie {
+        mask-image: var(--sophie-headshot);
     }
 
     /* #profile-image img {
@@ -1005,7 +1018,7 @@
     }
 
     /* MOBILE DIMENSIONS SIZE */
-    @media (width < 900px) {
+    @media (width < 1000px) {
         .headshot {
             mask-size: contain;
         }
@@ -1044,10 +1057,8 @@
         
     }
 
-
-    /* animation keyframes */
     @keyframes popin {
             to {
                 opacity: 1;
             }
-    }
+        }
