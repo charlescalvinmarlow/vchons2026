@@ -104,6 +104,8 @@
         --lucien-fg: rgb(78, 61, 61);
         --mac-bg: #fff4dc;
         --mac-fg: #0039ab;
+        --shu-bg: rgb(205, 207, 185);
+        --shu-fg: rgb(50, 50, 255);
         --sophie-bg: rgb(245, 253, 255);
         --sophie-fg: rgb(10, 55, 65);
         --tom-bg: rgb(231, 255, 203);
@@ -224,6 +226,42 @@
         --current-color: var(--jie-fg);
     }
 
+    #pageid-joel {
+        color: var(--joel-fg);
+        background-color: var(--joel-bg);
+        --current-color: var(--joel-fg);
+    }
+
+    #pageid-jom {
+        color: var(--jom-fg);
+        background-color: var(--jom-bg);
+        --current-color: var(--jom-fg);
+    }
+
+    #pageid-katie {
+        color: var(--katie-fg);
+        background-color: var(--katie-bg);
+        --current-color: var(--katie-fg);
+    }
+
+    #pageid-mac {
+        color: var(--mac-fg);
+        background-color: var(--mac-bg);
+        --current-color: var(--mac-fg);
+    }
+
+    #pageid-pat {
+        color: var(--pat-fg);
+        background-color: var(--pat-bg);
+        --current-color: var(--pat-fg);
+    }
+
+    #pageid-tom {
+        color: var(--tom-fg);
+        background-color: var(--tom-bg);
+        --current-color: var(--tom-fg);
+    }
+
     .image-grid {
         width: 100%;
         height: 100%;
@@ -248,6 +286,7 @@
         right: 0;
         color: rgb(247, 246, 233);
         mix-blend-mode: difference;
+        
     }
 
     #return-link {
@@ -399,7 +438,7 @@
         grid-column: 1/3;
         grid-row: 2/3;
         width: 100%;
-        height: 100%;
+        height: 15vh;
         background: var(--current-color);
 
         mask-repeat: no-repeat;
@@ -470,17 +509,17 @@
     }
 
     #communication {
-        grid-column: 1 / 7;
+        grid-column: 1 / 10;
         grid-row: 6 / 7;
     }
 
     #honours {
-        grid-column: 3 / 7;
+        grid-column: 3 / 10;
         grid-row: 7 / 8;
     }
 
     #showcase {
-        grid-column: 2 / 6;
+        grid-column: 2 / 10;
         grid-row: 8 / 9;
     }
 
@@ -524,77 +563,77 @@
         grid-column: 4 / 5;
         grid-row: 1 / 3;
         mask-image: url(images/headshots/Arkie00.webp);
-        animation: popin 0.5s forwards 0.2s;
+        animation: popin 0.5s forwards 0.05s;
     }
 
     #chantelle {
         grid-column: 6 / 7;
         grid-row: 1 / 3;
         mask-image: url(images/headshots/Chantelle00.webp);
-        animation: popin 0.5s forwards 0.4s;
+        animation: popin 0.5s forwards 0.1s;
     }
 
     #charles {
         grid-column: 7 / 8;
         grid-row: 1 / 3;
         mask-image: url(images/headshots/Charlie00.webp);
-        animation: popin 0.5s forwards 0.6s;
+        animation: popin 0.5s forwards 0.15s;
     }
 
     #charli {
         grid-column: 8 / 9;
         grid-row: 1 / 3;
         mask-image: url(images/headshots/Charli00.webp);
-        animation: popin 0.5s forwards 0.8s;
+        animation: popin 0.5s forwards 0.2s;
     }
 
     #cheylon {
         grid-column: 1 / 2;
         grid-row: 3 / 5;
         mask-image: url(images/headshots/Cheylon00.webp);
-        animation: popin 0.5s forwards 1s;
+        animation: popin 0.5s forwards 0.25s;
     }
 
     #daniel {
         grid-column: 4 / 5;
         grid-row: 3 / 5;
         mask-image: url(images/headshots/Dan00.webp);
-        animation: popin 0.5s forwards 1.2s;
+        animation: popin 0.5s forwards 0.3s;
     }
 
     #elaine {
         grid-column: 6 / 7;
         grid-row: 3 / 5;
         mask-image: url(images/headshots/Elaine00.webp);
-        animation: popin 0.5s forwards 1.4s;
+        animation: popin 0.5s forwards 0.35s;
     }
 
     #ellie {
         grid-column: 8 / 9;
         grid-row: 3 / 5;
         mask-image: url(images/headshots/Ellie00.webp);
-        animation: popin 0.5s forwards 1.6s;
+        animation: popin 0.5s forwards 0.4s;
     }
 
     #jade {
         grid-column: 9 / 10;
         grid-row: 3 / 5;
         mask-image: url(images/headshots/Jade00.webp);
-        animation: popin 0.5s forwards 1.8s;
+        animation: popin 0.5s forwards 0.45s;
     }
 
     #james {
         grid-column: 7 / 8;
         grid-row: 5 / 7;
         mask-image: url(images/headshots/James00.webp);
-        animation: popin 0.5s forwards 2s;
+        animation: popin 0.5s forwards 0.5s;
     }
 
     #jenn {
         grid-column: 8 / 9;
         grid-row: 5 / 7;
         mask-image: url(images/headshots/Jenn00.webp);
-        animation: popin 0.5s forwards 2.2s;
+        animation: popin 0.5s forwards 0.55s;
     }
 
 
@@ -602,7 +641,7 @@
         grid-column: 9 / 10;
         grid-row: 5 / 7;
         mask-image: url(images/headshots/Jessie00.webp);
-        animation: popin 0.5s forwards 2.4s;
+        animation: popin 0.5s forwards 0.6s;
     }
 
 
@@ -610,7 +649,7 @@
         grid-column: 1 / 2;
         grid-row: 7 / 9;
         mask-image: url(images/headshots/Jie00.webp);
-        animation: popin 0.5s forwards 2.6s;
+        animation: popin 0.5s forwards 0.65s;
     }
 
 
@@ -618,7 +657,7 @@
         grid-column: 7 / 8;
         grid-row: 7 / 9;
         mask-image: url(images/headshots/Joe00.webp);
-        animation: popin 0.5s forwards 2.8s;
+        animation: popin 0.5s forwards 0.7s;
     }
 
 
@@ -626,7 +665,7 @@
         grid-column: 9 / 10;
         grid-row: 7 / 9;
         mask-image: url(images/headshots/Joel00.webp);
-        animation: popin 0.5s forwards 3s;
+        animation: popin 0.5s forwards 0.75s;
     }
 
 
@@ -634,70 +673,70 @@
         grid-column: 1 / 2;
         grid-row: 9 / 11;
         mask-image: url(images/headshots/Jom00.webp);
-        animation: popin 0.5s forwards 3.2s;
+        animation: popin 0.5s forwards 0.8s;
     }
 
     #katie {
         grid-column: 5 / 6;
         grid-row: 9 / 11;
         mask-image: url(images/headshots/Katie00.webp);
-        animation: popin 0.5s forwards 3.4s;
+        animation: popin 0.5s forwards 0.85s;
     }
 
     #kaya {
         grid-column: 7 / 8;
         grid-row: 9 / 11;
         mask-image: url(images/headshots/Kaya00.webp);
-        animation: popin 0.5s forwards 3.6s;
+        animation: popin 0.5s forwards 0.9s;
     }
 
     #kk {
         grid-column: 9 / 11;
         grid-row: 9 / 11;
         mask-image: url(images/headshots/KK00.webp);
-        animation: popin 0.5s forwards 3.8s;
+        animation: popin 0.5s forwards 0.95s;
     }
 
     #lucien {
         grid-column: 3 / 4;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Lucien00.webp);
-        animation: popin 0.5s forwards 4s;
+        animation: popin 0.5s forwards 1s;
     }
 
     #mac {
         grid-column: 5 / 6;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Mack00.webp);
-        animation: popin 0.5s forwards 4.2s;
+        animation: popin 0.5s forwards 1.05s;
     }
 
     #pat {
         grid-column: 6 / 7;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Pat00.webp);
-        animation: popin 0.5s forwards 4.4s;
+        animation: popin 0.5s forwards 1.1s;
     }
 
     #shu {
         grid-column: 7 / 8;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Shu00.webp);
-        animation: popin 0.5s forwards 4.6s;
+        animation: popin 0.5s forwards 1.15s;
     }
 
     #sophie {
         grid-column: 8 / 9;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Sophie00.webp);
-        animation: popin 0.5s forwards 4.8s;
+        animation: popin 0.5s forwards 1.2s;
     }
 
     #tom {
         grid-column: 9 / 10;
         grid-row: 11 / 13;
         mask-image: url(images/headshots/Tom00.webp);
-        animation: popin 0.5s forwards 5s;
+        animation: popin 0.5s forwards 1.25s;
     }
 
 
@@ -927,9 +966,9 @@
             }
 
             .project-image {
-                grid-column: 2 / 5;
-                grid-row: 1 / 5;
-                /* background: center / cover url(images/cheylon/hero.webp); */
+                grid-column: 1 / 4;
+                grid-row: 9 / 13;
+                background: center / cover url(images/jie/jie_1.webp);
                 opacity: 1;
             }
         }
@@ -1076,6 +1115,22 @@
                 background: center / cover url(images/patrick/Img1.jpg);
                 opacity: 1;
             }
+        }
+
+        body:has(#shu:hover) {
+            --color: var(--shu-fg);
+            --bg: var(--shu-bg);
+
+            .headshot:not(#shu) {
+                mix-blend-mode: overlay;
+            }
+
+            /* .project-image {
+                grid-column: 3 / 6;
+                grid-row: 9 / 13;
+                background: center / cover url(images/patrick/Img1.jpg);
+                opacity: 1;
+            } */
         }
 
         /* HOVERING THE HERO KEEPS IT OPEN SO IT CAN BE CLICKED */
