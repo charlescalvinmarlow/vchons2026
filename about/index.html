@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - VCHons2026</title>
+
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Redaction+10:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+    <main class="about-main">
+        <div class="about-heading">
+            <a href="/" class="about-return">← Return</a>
+            <h1>About</h1>
+        </div>
+        <div class="about-about spc-after">
+            
+            <p id="about-desc" class="spc-after">This website was made for and by the 2026 class of Bachelor of Design (Honours) in Visual Communication Students at the University of Technology Sydney.</p>
+            <ul>
+                <li><a href="/anja">Anja Clausius</a></li>
+                <li><a href="/arkie">Arkie Thomas</a></li>
+                <li><a href="/chantelle">Chantelle Cortez Maglalang</a></li>
+                <li><a href="/charles">Charles Marlow</a></li>
+                <li><a href="/charli">Charli Krite</a></li>
+                <li><a href="/cheylon">Cheylon Devine</a></li>
+                <li><a href="/daniel">Daniel Sjögren</a></li>
+                <li><a href="/elaine">Elaine Cabansag</a></li>
+                <li><a href="/ellie">Ellie Jiyoon Park</a></li>
+                <li><a href="/jade">Jade Yeo</a></li>
+                <li><a href="/james">James Campbell</a></li>
+                <li><a href="/jenn">Jenn Shu</a></li>
+                <li><a href="/jessie">Jessie Hua</a></li>
+                <li><a href="/jie">Jie Yin</a></li>
+                <li><a href="/joseph">Joseph Matthew Palmero</a></li>
+                <li><a href="/katie">Katie Bayne</a></li>
+                <li><a href="/kaya">Kaya Tranter</a></li>
+                <li><a href="/kk">KK Patel</a></li>
+                <li><a href="/lucien">Lucien Yumru</a></li>
+                <li><a href="/mackenzie">Mackenzie Joyner</a></li>
+                <li><a href="/patrick">Patrick Baker</a></li>
+                <li><a href="/shu">Shu Cai</a></li>
+                <li><a href="/sophie">Sophie Zhang</a></li>
+                <li><a href="/thomas">Thomas Houston</a></li>
+            </ul>
+        </div>
+        <div class="about-credits">
+            <p class="about-socials spc-after"><a href="https://www.instagram.com/vc.hons/">@vc.hons</a></p>
+            <div class="about-web-credits spc-after">
+                <p class="about-credits-title">Web Design and Development</p>
+                <p>Sophie Zhang</p>
+                <p>Charles Marlow</p>
+            </div>
+            <div class="about-design-credits spc-after">
+                <p class="about-credits-title">Design and Brand</p>
+                <p>Anja Clausius</p>
+                <p>Thomas Houston</p>
+            </div>
+            <div class="about-photo-credits spc-after">
+                <p class="about-credits-title">Photography</p>
+                <p>Thomas Houston</p>
+            </div>
+            <div class="about-socials-credits spc-after">
+                <p class="about-credits-title">Social Media</p>
+                <p>Elaine Cabansag</p>
+            </div>
+            <div class="about-exhibition-credits spc-after">
+                <p class="about-credits-title">Exhibition Design</p>
+                <p>Biljana Jančić</p>
+                <p>Ella Sutherland</p>
+            </div>
+            <div class="about-supervisors-credits spc-after">
+                <p class="about-credits-title">Supervisors</p>
+                <p>Zoe Sadokierski</p>
+                <p>Monica Monin</p>
+                <p>Andrew Burrell</p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+
+        /* mobile first */
+        .about-main {
+            padding: 40px;
+            margin-bottom: 100px;
+
+            /* FIX HEIGHT */
+
+        }
+    
+        .about-return {
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 64px;
+            margin-bottom: 100px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .about-socials {
+            font-weight: 600;
+        }
+
+        .about-credits-title {
+            font-weight: 600;
+        }
+
+        .spc-after {
+            margin-bottom: 20px;
+        }
+
+        @media (width > 600px) {
+            .about-main {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+            }
+
+            .about-about {
+                grid-column: 1 / 4;
+                
+            }
+
+            .about-credits {
+                grid-column: 6 / 8;
+            }
+        }
+    </style>
+</body>
+</html>
