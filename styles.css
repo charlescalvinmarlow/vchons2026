@@ -986,7 +986,7 @@
                 transition: opacity 1s, visibility 0s;
                 grid-column: 5 / 8;
                 grid-row: 9 / 13;
-                background: center / cover url(/images/sophie/hero.webp);
+                background: center / cover url(/images/sophie/img1.webp);
             }
         }
 
