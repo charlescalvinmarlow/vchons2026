@@ -98,8 +98,8 @@
         --katie-fg: #ed3193;
         --kaya-bg: rgb(215, 197, 179);
         --kaya-fg: #676b00;
-        --kk-fg: orange;
-        --kk-bg: rgb(191, 10, 149);
+        --kk-fg: #ffdfcf;
+        --kk-bg: #2d080a;
         --lucien-bg: rgb(225, 215, 194);
         --lucien-fg: rgb(78, 61, 61);
         --mac-bg: #fff4dc;
@@ -242,6 +242,12 @@
         color: var(--katie-fg);
         background-color: var(--katie-bg);
         --current-color: var(--katie-fg);
+    }
+
+    #pageid-kk {
+        color: var(--kk-fg);
+        background-color: var(--kk-bg);
+        --current-color: var(--kk-fg);
     }
 
     #pageid-mac {
