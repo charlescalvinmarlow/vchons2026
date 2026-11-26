@@ -60,8 +60,8 @@
         --color: rgb(113, 70, 27);
         --bg: rgb(247, 246, 233);
         /* INDIVIDUAL PERSON COLOURS */
-        --anja-bg: rgb(204, 247, 240);
-        --anja-fg: rgb(42, 38, 112);
+        --anja-bg: #ccf7f0;
+        --anja-fg: #2a2670;
         --arkie-bg: rgb(246, 255, 0);
         --arkie-fg: rgb(0, 60, 255);
         --chantelle-bg: #E4F6C2;
@@ -79,7 +79,7 @@
         --ellie-bg: #F5F5F5;
         --ellie-fg: #264E36;
         --jade-bg: #fff3cf;
-        --jade-fg: #ff37eb;
+        --jade-fg: #99007a;
         --james-bg: #E6DACF;
         --james-fg: #2C4466;
         --jenn-bg: rgb(232, 236, 240);
@@ -96,18 +96,18 @@
         --jom-fg: rgb(15, 65, 0);
         --katie-bg: #ffd7e8;
         --katie-fg: #ff0084;
-        --kaya-bg: rgb(215, 197, 179);
-        --kaya-fg: #676b00;
-        --kk-fg: #ffdfcf;
-        --kk-bg: #2d080a;
+        --kaya-bg: #f2ece6;
+        --kaya-fg: #4b4e00;
+        --kk-fg: #2d080a; 
+        --kk-bg: #ff7ba8;
         --lucien-bg: rgb(225, 215, 194);
         --lucien-fg: rgb(78, 61, 61);
         --mac-bg: #fff4dc;
         --mac-fg: #0039ab;
-        --shu-bg: rgb(224, 219, 227);
-        --shu-fg: rgb(45, 28, 139);
-        --sophie-bg: rgb(245, 253, 255);
-        --sophie-fg: rgb(10, 55, 65);
+        --shu-bg: #e0dbe3;
+        --shu-fg: #473572;
+        --sophie-bg: #ecfff5;
+        --sophie-fg: #0e4e5c;
         --tom-bg: rgb(231, 255, 203);
         --tom-fg: rgb(3, 47, 85);
         --pat-bg: #1fb3ef;
@@ -254,6 +254,12 @@
         color: var(--kk-fg);
         background-color: var(--kk-bg);
         --current-color: var(--kk-fg);
+    }
+
+    #pageid-lucien {
+        color: var(--lucien-fg);
+        background-color: var(--lucien-bg);
+        --current-color: var(--lucien-fg);
     }
 
     #pageid-mac {
@@ -1100,9 +1106,9 @@
             }
 
             .project-image {
-                grid-column: 2 / 5;
-                grid-row: 1 / 5;
-                /* background: center / cover url(images/cheylon/hero.webp); */
+                grid-column: 6 / 9;
+                grid-row: 9 / 13;
+                background: center / cover url(images/lucien/hero.webp);
                 opacity: 1;
             }
         }
