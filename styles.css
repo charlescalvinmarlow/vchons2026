@@ -268,6 +268,12 @@
         --current-color: var(--pat-fg);
     }
 
+    #pageid-shu {
+        color: var(--shu-fg);
+        background-color: var(--shu-bg);
+        --current-color: var(--shu-fg);
+    }
+
     #pageid-tom {
         color: var(--tom-fg);
         background-color: var(--tom-bg);
