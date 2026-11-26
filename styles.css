@@ -1345,13 +1345,15 @@
             display: block;
             li {
                 list-style: none;
+                border-top: 1px solid var(--color);
+                padding: 15px 0;         
+            }
+            a {
                 display: grid;
                 grid-template-columns: 40% 40%;
                 gap: 15%;
-                border-top: 1px solid var(--color);
-                padding: 15px 0;
                 text-decoration: underline;  
-                text-decoration-thickness: 1px;              
+                text-decoration-thickness: 1px;
             }
         }
 
