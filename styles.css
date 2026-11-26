@@ -113,7 +113,7 @@
         --pat-bg: #1fb3ef;
         --pat-fg: #0f0f15;
         /* --title-size: 8.5vh; */
-        --title-size: clamp(2em, 10vw, 8.5vh);
+        --title-size: clamp(2em, 8vw, 8.5vh);
         color: var(--color);
     }
 
@@ -287,6 +287,10 @@
         color: rgb(247, 246, 233);
         mix-blend-mode: difference;
         
+    }
+
+    #m-index {
+        padding-top: 8vh;
     }
 
     #return-link {
@@ -747,7 +751,7 @@
         display: none;
     }
 
-    @media (hover:hover) {
+    @media (hover:hover) and (width > 700px) {
 
         body:has(#anja:hover) {
             --color: var(--anja-fg);
@@ -1169,15 +1173,36 @@
         }
     }
 
+
+    .mobile {
+        display: none;
+    }
     /* MOBILE DIMENSIONS SIZE */
     @media (width < 1000px) {
         
+
         /* home page */
+
+        .mobile {
+            display: initial;
+        }
+
+        #down-arrow {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 2vh;
+            animation: bob infinite alternate 1.5s ease-in-out;
+            img {
+                max-width: 10vw;
+            }
+        }
 
         .image-grid {
             grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: repeat(18, 4.8dvh);
-            padding: 60px 30px;
+            grid-template-rows: repeat(18, 4.4dvh);
+            padding: 70px 30px 8vh;
+            height: 90vh;
         }
 
         #uts {
@@ -1290,12 +1315,12 @@
             grid-row: 15 / 17;
         }
         #mac {
-            grid-column: 9 / 11;
+            grid-column: 5 / 7;
             grid-row: 15 / 17;
         }
         #lucien {
-            grid-column: 1 / 3;
-            grid-row: 17 / 19;
+            grid-column: 9 / 11;
+            grid-row: 15 / 17;
         }
         #pat {
             grid-column: 3 / 5;
@@ -1306,10 +1331,29 @@
             grid-row: 17 / 19;
         }
         #sophie {
-            grid-column: 5 / 7;
+            grid-column: 7 / 9;
+            grid-row: 17 / 19;
+        }
+        #tom {
+            grid-column: 9 / 11;
             grid-row: 17 / 19;
         }
 
+        #m-index {
+            padding: 40px;
+            width: 100%;
+            display: block;
+            li {
+                list-style: none;
+                display: grid;
+                grid-template-columns: 40% 40%;
+                gap: 15%;
+                border-top: 1px solid var(--color);
+                padding: 15px 0;
+                text-decoration: underline;  
+                text-decoration-thickness: 1px;              
+            }
+        }
 
         /* individual pages */
         #return-link {
@@ -1373,5 +1417,11 @@
     @keyframes popin {
             to {
                 opacity: 1;
+            }
+        }
+
+        @keyframes bob {
+            to {
+                transform: translateY(10px);
             }
         }
