@@ -1191,7 +1191,9 @@
     }
     /* MOBILE DIMENSIONS SIZE */
     @media (width < 1000px) {
-        
+        :root {
+            --title-size: clamp(2em, 4.4vh, 4.4vh);
+        }
 
         /* home page */
 
