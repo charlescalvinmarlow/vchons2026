@@ -308,9 +308,9 @@
         position: fixed;
         width: clamp(170px, 15vw, 300px);
         right: 0;
-        color: rgb(247, 246, 233);
-        mix-blend-mode: difference;
-        
+        color: var(--color);
+        /* mix-blend-mode: difference; */
+        text-align: right;
     }
 
     #m-index {
